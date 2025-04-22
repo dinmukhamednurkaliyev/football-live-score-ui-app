@@ -13,88 +13,136 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        actions: [
-          const SizedBox(width: 20),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Material(
-              elevation: 0.2,
-              borderRadius: BorderRadius.circular(10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: const EdgeInsets.all(8),
-                child: const Icon(Icons.window_rounded),
+      appBar: headerParts(),
+      body: Column(children: [liveMatchText()]),
+    );
+  }
+
+  AppBar headerParts() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      actions: [
+        const SizedBox(width: 20),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Material(
+            elevation: 0.2,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
               ),
+              padding: const EdgeInsets.all(8),
+              child: const Icon(Icons.window_rounded),
             ),
           ),
-          const Spacer(),
-          const Row(
-            children: [
-              Text(
-                'S',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 35,
-                  letterSpacing: -2,
-                ),
+        ),
+        const Spacer(),
+        const Row(
+          children: [
+            Text(
+              'S',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+                letterSpacing: -2,
               ),
-              Icon(
-                Icons.sports_soccer,
+            ),
+            Icon(Icons.sports_soccer, color: AppColors.kprimaryColor, size: 25),
+            Text(
+              'ccer',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                letterSpacing: -2,
+              ),
+            ),
+            Text(
+              ' Nerds',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
                 color: AppColors.kprimaryColor,
-                size: 25,
+                letterSpacing: -2,
               ),
-              Text(
-                'ccer',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  letterSpacing: -2,
-                ),
+            ),
+          ],
+        ),
+        const Spacer(),
+        Padding(
+          padding: const EdgeInsets.all(5),
+          child: Material(
+            elevation: 0.2,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
               ),
-              Text(
-                'Nerds',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: AppColors.kprimaryColor,
-                  letterSpacing: -2,
-                ),
-              ),
-            ],
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Material(
-              elevation: 0.2,
-              borderRadius: BorderRadius.circular(10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: const EdgeInsets.all(8),
-                child: const Stack(
-                  children: [
-                    Icon(Icons.notifications),
-                    Positioned(
-                      right: 1,
-                      child: CircleAvatar(
-                        radius: 4,
-                        backgroundColor: AppColors.kprimaryColor,
-                      ),
+              padding: const EdgeInsets.all(8),
+              child: const Stack(
+                children: [
+                  Icon(Icons.notifications),
+                  Positioned(
+                    right: 1,
+                    child: CircleAvatar(
+                      radius: 4,
+                      backgroundColor: AppColors.kprimaryColor,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
-          const SizedBox(width: 20),
+        ),
+        const SizedBox(width: 20),
+      ],
+    );
+  }
+
+  Padding liveMatchText() {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        children: [
+          const Text(
+            'Live Match',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+              letterSpacing: -1.5,
+            ),
+          ),
+          const Spacer(),
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: const [
+                BoxShadow(color: Color.fromRGBO(0, 0, 0, 0.08), blurRadius: 20),
+              ],
+            ),
+            child: Row(
+              children: [
+                Image.asset('assets/images/pl.png', width: 30, height: 30),
+                const SizedBox(width: 3),
+                const Text(
+                  'Premier League',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: -1,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(width: 5),
+                const Icon(Icons.keyboard_arrow_down),
+              ],
+            ),
+          ),
         ],
       ),
     );
