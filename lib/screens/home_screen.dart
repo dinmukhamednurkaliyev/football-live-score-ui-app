@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_live_score_ui_app/models/live_match_model.dart';
+import 'package:football_live_score_ui_app/models/upcoming_model.dart';
 import 'package:football_live_score_ui_app/theme/colors.dart';
 import 'package:football_live_score_ui_app/widgets/live_match.dart';
 
@@ -33,6 +34,148 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: LiveMatchData(live: live),
                 );
               },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                const Text(
+                  'Upcoming Matches',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                    letterSpacing: -1.5,
+                    color: Colors.black54,
+                  ),
+                ),
+                const Spacer(),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: AppColors.kprimaryColor,
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'See All',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: const AlwaysScrollableScrollPhysics(),
+                itemCount: upcomingMatches.length,
+                itemBuilder: (context, index) {
+                  final upcoming = upcomingMatches[index];
+                  return GestureDetector(
+                    child: Stack(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 5, bottom: 5),
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 15,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                offset: const Offset(0, -5),
+                                color:
+                                    upcoming.isFavorite
+                                        ? AppColors.kprimaryColor
+                                        : Colors.black12,
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                upcoming.homeTitle,
+                                style: TextStyle(
+                                  fontSize: 16.5,
+                                  letterSpacing: -1,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade700,
+                                ),
+                              ),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    upcoming.homeLogo,
+                                    height: 45,
+                                    width: 45,
+                                  ),
+                                  const Text(
+                                    'Home',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      letterSpacing: -1,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Text(
+                                    upcoming.time,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      letterSpacing: -1,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    upcoming.date,
+                                    style: const TextStyle(fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    upcoming.awayLogo,
+                                    height: 45,
+                                    width: 45,
+                                  ),
+                                  const Text(
+                                    'Away',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      letterSpacing: -1,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Text(
+                                upcoming.awayTitle,
+                                style: TextStyle(
+                                  fontSize: 16.5,
+                                  letterSpacing: -1,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey.shade700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ],
