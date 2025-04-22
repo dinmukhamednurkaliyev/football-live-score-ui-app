@@ -75,9 +75,9 @@ class BottomNavBarItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTab,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 100),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isActive ? AppColors.kprimaryColor : Colors.white,
