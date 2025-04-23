@@ -1,16 +1,16 @@
-# football_live_score_ui_app
+# Football Live Score App
 
-A new Flutter project.
+## Description
 
-## Getting Started
+This repository contains a Flutter application developed to gain experience in UI design and implementation. The project was created by following a video tutorial that demonstrated app development principles and layout structures using Flutter.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p float="left">
+<img src="screenshots/Screenshot_1745412203.png" width="200"/>
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resources
+Youtube: [Complete Flutter UI Design Tutorial For Beginners](https://youtu.be/DronqUbOHCo?list=PLcmJOjMPMVkfM29MgeOt9NyjZF1vGeIMH)
+![alt text](Screenshot_1745412203.png)
