@@ -171,6 +171,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
+                        Positioned(
+                          top: 12,
+                          left: 12,
+                          child: Icon(
+                            Icons.star,
+                            color:
+                                upcoming.isFavorite
+                                    ? AppColors.kprimaryColor
+                                    : Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                   );

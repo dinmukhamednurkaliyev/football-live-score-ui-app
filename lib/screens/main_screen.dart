@@ -12,7 +12,7 @@ class BottomNavBarItems extends StatelessWidget {
   });
   final String title;
   final bool isActive;
-  final Function() onTab;
+  final VoidCallback onTab;
   final IconData icon;
 
   @override
