@@ -149,6 +149,43 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                                       ],
                                     ),
                                   ),
+                                  const SizedBox(height: 10),
+                                  Text.rich(
+                                    TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              widget.liveMatch.homeGoal
+                                                  .toString(),
+                                          style: TextStyle(
+                                            fontSize: 36,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                widget.liveMatch.onTheWinner
+                                                    ? AppColors.kprimaryColor
+                                                    : widget
+                                                        .liveMatch
+                                                        .textColors,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              ' : ${widget.liveMatch.awayGoal}',
+                                          style: TextStyle(
+                                            fontSize: 36,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                widget.liveMatch.onTheWinner
+                                                    ? widget
+                                                        .liveMatch
+                                                        .textColors
+                                                    : AppColors.kprimaryColor,
+                                          ),
+                                        ),
+                                        // TODO: Continue Developing the app
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],
