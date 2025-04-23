@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_live_score_ui_app/models/live_match_model.dart';
 import 'package:football_live_score_ui_app/models/upcoming_model.dart';
+import 'package:football_live_score_ui_app/screens/match_details_screen.dart';
 import 'package:football_live_score_ui_app/theme/colors.dart';
 import 'package:football_live_score_ui_app/widgets/live_match.dart';
 import 'package:football_live_score_ui_app/widgets/upcoming_matches.dart';
@@ -31,7 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 final live = liveMatches[index];
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<MatchDetailsScreen>(
+                        builder: (_) => MatchDetailsScreen(liveMatch: live),
+                      ),
+                    );
+                  },
                   child: LiveMatchData(live: live),
                 );
               },

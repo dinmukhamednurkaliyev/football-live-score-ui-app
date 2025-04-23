@@ -16,6 +16,7 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
     return Scaffold(
       backgroundColor: AppColors.detailBackgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: AppColors.detailBackgroundColor,
         actions: [
@@ -32,7 +33,7 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                 ),
                 padding: const EdgeInsets.all(8),
                 child: GestureDetector(
-                  onDoubleTap: () {
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: const Icon(Icons.arrow_left_rounded),
@@ -41,6 +42,26 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
             ),
           ),
           const Spacer(),
+          const Column(
+            children: [
+              Text(
+                'Champions League',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: -1,
+                ),
+              ),
+              Text(
+                'GROUP STAGE',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey,
+                  letterSpacing: -1,
+                ),
+              ),
+            ],
+          ),
           const Spacer(),
           Padding(
             padding: const EdgeInsets.all(5),
