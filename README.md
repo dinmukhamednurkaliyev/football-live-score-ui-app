@@ -13,4 +13,3 @@ This repository contains a Flutter application developed to gain experience in U
 
 ## Resources
 Youtube: [Complete Flutter UI Design Tutorial For Beginners](https://youtu.be/DronqUbOHCo?list=PLcmJOjMPMVkfM29MgeOt9NyjZF1vGeIMH)
-![alt text](Screenshot_1745412203.png)
