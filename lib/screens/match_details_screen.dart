@@ -18,7 +18,47 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColors.detailBackgroundColor,
-        actions: [],
+        actions: [
+          const SizedBox(width: 20),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Material(
+              elevation: 1,
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.all(8),
+                child: GestureDetector(
+                  onDoubleTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Icon(Icons.arrow_left_rounded),
+                ),
+              ),
+            ),
+          ),
+          const Spacer(),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Material(
+              elevation: 1,
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.all(8),
+                child: const Icon(Icons.more_rounded),
+              ),
+            ),
+          ),
+          const SizedBox(width: 20),
+        ],
       ),
     );
   }
