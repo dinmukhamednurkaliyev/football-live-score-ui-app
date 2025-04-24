@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_live_score_ui_app/models/live_match_model.dart';
 import 'package:football_live_score_ui_app/theme/colors.dart';
+import 'package:football_live_score_ui_app/widgets/live_match_detail.dart';
 
 class MatchDetailsScreen extends StatefulWidget {
   const MatchDetailsScreen({required this.liveMatch, super.key});
@@ -75,134 +76,7 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                 ],
               ),
             ),
-            Positioned(
-              top: 25,
-              left: 25,
-              right: 25,
-              child: Container(
-                height: 250,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: widget.liveMatch.color,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      bottom: -230,
-                      child: Transform.rotate(
-                        angle: 45,
-                        child: Opacity(
-                          opacity: 0.2,
-                          child: Image.asset('assets/images/cl.png'),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 20,
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            widget.liveMatch.stadium,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: widget.liveMatch.textColors,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 25),
-                          Row(
-                            children: [
-                              Image.asset(
-                                widget.liveMatch.homeLogo,
-                                width: 90,
-                                height: 90,
-                              ),
-                              const Spacer(),
-                              Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: const Color(0xffFFF4E5),
-                                    ),
-                                    child: const Row(
-                                      children: [
-                                        Icon(
-                                          Icons.circle,
-                                          color: AppColors.kprimaryColor,
-                                          size: 10,
-                                        ),
-                                        SizedBox(width: 5),
-                                        Text(
-                                          'Live',
-                                          style: TextStyle(
-                                            color: AppColors.kprimaryColor,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Text.rich(
-                                    TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text:
-                                              widget.liveMatch.homeGoal
-                                                  .toString(),
-                                          style: TextStyle(
-                                            fontSize: 36,
-                                            fontWeight: FontWeight.bold,
-                                            color:
-                                                widget.liveMatch.onTheWinner
-                                                    ? AppColors.kprimaryColor
-                                                    : widget
-                                                        .liveMatch
-                                                        .textColors,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text:
-                                              ' : ${widget.liveMatch.awayGoal}',
-                                          style: TextStyle(
-                                            fontSize: 36,
-                                            fontWeight: FontWeight.bold,
-                                            color:
-                                                widget.liveMatch.onTheWinner
-                                                    ? widget
-                                                        .liveMatch
-                                                        .textColors
-                                                    : AppColors.kprimaryColor,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              // TODO: Continue Developing the app
-                              const Spacer(),
-                              Image.asset(
-                                widget.liveMatch.awayLogo,
-                                width: 90,
-                                height: 90,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            LiveMatchDetail(widget: widget),
           ],
         ),
       ),
