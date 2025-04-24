@@ -182,11 +182,17 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                                                     : AppColors.kprimaryColor,
                                           ),
                                         ),
-                                        // TODO: Continue Developing the app
                                       ],
                                     ),
                                   ),
                                 ],
+                              ),
+                              // TODO: Continue Developing the app
+                              const Spacer(),
+                              Image.asset(
+                                widget.liveMatch.awayLogo,
+                                width: 90,
+                                height: 90,
                               ),
                             ],
                           ),
