@@ -77,17 +77,14 @@ class LiveMatchStats extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Expanded(
-                child: RotatedBox(
-                  quarterTurns: 2,
-                  child: LinearProgressIndicator(
-                    value: awayValue,
-                    minHeight: 10,
-                    backgroundColor: Colors.grey.shade200,
-                    valueColor: AlwaysStoppedAnimation(
-                      !isHomeWinner
-                          ? AppColors.kprimaryColor
-                          : AppColors.ksecondryColor,
-                    ),
+                child: LinearProgressIndicator(
+                  value: awayValue,
+                  minHeight: 10,
+                  backgroundColor: Colors.grey.shade200,
+                  valueColor: AlwaysStoppedAnimation(
+                    !isHomeWinner
+                        ? AppColors.kprimaryColor
+                        : AppColors.ksecondryColor,
                   ),
                 ),
               ),

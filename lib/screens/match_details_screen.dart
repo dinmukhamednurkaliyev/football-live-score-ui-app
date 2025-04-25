@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:football_live_score_ui_app/models/live_match_model.dart';
 import 'package:football_live_score_ui_app/theme/colors.dart';
 import 'package:football_live_score_ui_app/widgets/live_match_detail.dart';
+import 'package:football_live_score_ui_app/widgets/live_match_stats.dart';
 
 class MatchDetailsScreen extends StatefulWidget {
   const MatchDetailsScreen({required this.liveMatch, super.key});
@@ -73,6 +74,56 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen> {
                     }),
                   ),
                   const SizedBox(height: 20),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.shotOnTarget,
+                    awayStats: widget.liveMatch.shotOnTarget * 2,
+                    title: 'Shots On Target',
+                    homeValue: widget.liveMatch.shotOnTarget.toDouble() / 10,
+                    awayValue:
+                        widget.liveMatch.shotOnTarget.toDouble() * 2 / 10,
+                    isHomeWinner: false,
+                  ),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.homeGoal,
+                    awayStats: widget.liveMatch.awayGoal,
+                    title: 'Goals',
+                    homeValue: widget.liveMatch.homeGoal.toDouble() / 5,
+                    awayValue: widget.liveMatch.awayGoal.toDouble() * 2 / 5,
+                    isHomeWinner: true,
+                  ),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.possession,
+                    awayStats: 100 - widget.liveMatch.possession,
+                    title: 'Possession',
+                    homeValue:
+                        widget.liveMatch.possession.toDouble() * 1.1 / 100,
+                    awayValue: widget.liveMatch.possession.toDouble() / 100,
+                    isHomeWinner: true,
+                  ),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.yelloCard,
+                    awayStats: widget.liveMatch.yelloCard + 1,
+                    title: 'Yellow Cards',
+                    homeValue: widget.liveMatch.yelloCard.toDouble() / 10,
+                    awayValue: widget.liveMatch.yelloCard.toDouble() * 2 / 10,
+                    isHomeWinner: false,
+                  ),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.redCard - 1,
+                    awayStats: widget.liveMatch.redCard,
+                    title: 'Red Cards',
+                    homeValue: widget.liveMatch.redCard.toDouble() / 10,
+                    awayValue: widget.liveMatch.redCard.toDouble() * 2 / 10,
+                    isHomeWinner: false,
+                  ),
+                  LiveMatchStats(
+                    homeStats: widget.liveMatch.corner,
+                    awayStats: widget.liveMatch.corner - 1,
+                    title: 'Corner Kicks',
+                    homeValue: widget.liveMatch.redCard.toDouble() / 5,
+                    awayValue: widget.liveMatch.redCard.toDouble() / 5,
+                    isHomeWinner: true,
+                  ),
                 ],
               ),
             ),
