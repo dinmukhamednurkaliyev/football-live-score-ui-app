@@ -1,4 +1,4 @@
-# Football Live Score App
+# Football Live Score App (Learning Project)
 
 ## Description
 
